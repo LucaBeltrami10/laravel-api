@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\TechnologyController;
 use Database\Seeders\ProjectSeeder;
 
 /*
@@ -22,4 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::name('api.')->group(function () {
     Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+    Route::get('/projects', [TechnologyController::class, 'index'])->name('technologies.index');
 });
